@@ -6,7 +6,7 @@ export default function Botao({ texto, onPress, icone = false }) {
     <TouchableOpacity 
       style={styles.botao} 
       onPress={onPress}
-      activeOpacity={0.8} // Adicionado: controla a transparência ao clicar
+      activeOpacity={0.8} 
     >
       {icone && <Play size={20} color="#FFFFFF" style={styles.icone} />}
       <Text style={styles.texto}>{texto}</Text>
@@ -16,7 +16,7 @@ export default function Botao({ texto, onPress, icone = false }) {
 
 const styles = StyleSheet.create({
   botao: {
-    backgroundColor: "#E50914",
+    backgroundColor: "#f044d9",
     padding: 14, 
     borderRadius: 8,
     alignItems: "center",
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   texto: {
-    color: "#FFFFFF",
+    color: "#0b0303",
     fontSize: 16,
     fontWeight: "bold",
   },
