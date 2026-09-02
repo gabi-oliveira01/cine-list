@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+
 import Botao from "./Botao";
 
 export default function FilmeItem({
@@ -7,6 +8,11 @@ export default function FilmeItem({
   aoExcluir,
   aoEditar,
 }) {
+  const status = filme.assistido ? "Assistido" : "Quero assistir";
+  const textoBotao = filme.assistido
+    ? "Marcar como não assistido"
+    : "Marcar como assistido";
+
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>
@@ -19,11 +25,11 @@ export default function FilmeItem({
       </Text>
 
       <Text style={styles.status}>
-        Status: {filme.assistido ? "Assistido" : "Quero assistir"}
+        Status: {status}
       </Text>
 
       <Botao
-        texto={filme.assistido ? "Marcar como não assistido" : "Marcar como assistido"}
+        texto={textoBotao}
         onPress={() => aoAlternarAssistido(filme.id)}
       />
 
@@ -39,28 +45,3 @@ export default function FilmeItem({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#F2F2F2",
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 12,
-  },
-
-  titulo: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-
-  categoria: {
-    fontSize: 16,
-    marginTop: 5,
-  },
-
-  status: {
-    fontSize: 14,
-    marginTop: 5,
-    marginBottom: 8,
-  },
-});
