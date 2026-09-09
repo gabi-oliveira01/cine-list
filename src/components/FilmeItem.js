@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 import Botao from "./Botao";
 
@@ -9,6 +9,7 @@ export default function FilmeItem({
   aoEditar,
 }) {
   const status = filme.assistido ? "Assistido" : "Quero assistir";
+
   const textoBotao = filme.assistido
     ? "Marcar como não assistido"
     : "Marcar como assistido";
@@ -45,3 +46,29 @@ export default function FilmeItem({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 15,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: "#CCCCCC",
+    borderRadius: 8,
+  },
+
+  titulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+
+  categoria: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+
+  status: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+});
